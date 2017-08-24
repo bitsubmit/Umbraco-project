@@ -1,0 +1,44 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "umbLayout.cshtml";
+}
+
+ <!-- Header -->
+    <header id="header">
+
+        <a href="/"><img src="../images/logomedfontibundenmedfarver2.png" class="custom-logo" alt="Lev livet igen logo"></a>
+        <p class="text-after-logo">Lev Livet Igen er en forening, der understøtter familier med længerevarende sygdomsforløb bag sig,<br> med at vende de tunge erfaringer og oplevelser til positive styrker og genfinde livsglæden.</p> 
+        <div class="logo">
+            <div class="messages">
+                <p class="byline">@{ Html.RenderPartial("umbBudskaber"); }</p>
+            </div>
+        </div>
+
+    </header>
+    <!-- /Header -->
+
+
+            
+@* @{ Html.RenderPartial("umbHomepageBanner"); } *@
+<!-- Main -->
+<div id="main-wrapper">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="12u">
+                @{ Html.RenderPartial("umbFeatures"); }
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                @{ Html.RenderPartial("umbAbout"); }
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                @{   Html.RenderPartial("umbNewsOverviewWidget"); }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /Main -->

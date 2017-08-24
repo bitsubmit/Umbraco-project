@@ -1,0 +1,57 @@
+﻿@{
+    @inherits UmbracoTemplatePage
+    
+    // Making the different dayofweek to the int datatype and giving every weekday it's own number starting from monday=1 and sunday=7.
+    int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek;
+    string dayName = "";
+    switch (day){
+        case 1:
+            dayName = "Mandagens";
+            break;
+        case 2:
+            dayName = "Tirsdagens";
+            break;
+        case 3:
+            dayName = "Onsdagens";
+            break;
+        case 4:
+            dayName = "Torsdagens";
+            break;
+        case 5:
+            dayName = "Fredagens";
+            break;
+        case 6:
+            dayName = "Lørdagens";
+            break;
+        case 7:
+            dayName = "Søndagens";
+            break;
+    } 
+}
+
+<div class="quotes">
+    <h2>@dayName citat</h2>
+
+        @if(day == 1){
+        <span>@Umbraco.Field("monday", recursive: true)</span>
+        }
+        @if(day == 2){
+        <span>@Umbraco.Field("tuesday", recursive: true)</span>
+        }
+        @if(day == 3){
+        <span>@Umbraco.Field("wednesday", recursive: true)</span>
+        }
+        @if(day == 4){
+        <span>@Umbraco.Field("thursday", recursive: true)</span>
+        }
+        @if(day == 5){
+        <span>@Umbraco.Field("friday", recursive: true)</span>
+        }
+        @if(day == 6){
+        <span>@Umbraco.Field("saturday", recursive: true)</span>
+        }
+        @if(day == 7){
+        <span>@Umbraco.Field("sunday", recursive: true)</span>
+        }
+
+</div>
